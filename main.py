@@ -43,7 +43,7 @@ async def create_snowboard(new_board: Snowboard, brand: SnowboardBrand):
             snowboards.append(new_board)
             return
 
-@app.put("/snowboards")
+@app.put("/snowboards/{snowboard_id}")
 async def update_snowboard(updated_board: Snowboard, snowboard_id: int, brand: SnowboardBrand):
     for i, board in enumerate(snowboards):
         if board.id == snowboard_id:
@@ -58,7 +58,7 @@ async def update_snowboard(updated_board: Snowboard, snowboard_id: int, brand: S
     return
         
 
-@app.delete("/snowboards")
+@app.delete("/snowboards/{snowboard_api}")
 async def delete_snowboard(snowboard_id: int):
     for i, board in enumerate(snowboards):
         if board.id == snowboard_id:
