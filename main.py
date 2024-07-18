@@ -58,7 +58,7 @@ async def update_snowboard(updated_board: Snowboard, snowboard_id: int, brand: S
     return
         
 
-@app.delete("/snowboards/{snowboard_api}")
+@app.delete("/snowboards/{snowboard_id}")
 async def delete_snowboard(snowboard_id: int):
     for i, board in enumerate(snowboards):
         if board.id == snowboard_id:
